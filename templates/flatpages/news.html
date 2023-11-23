@@ -1,35 +1,34 @@
 {% extends 'flatpages/default.html' %}
-
-{% extends 'default.html' %}
 {% load custom_filters %}
-
 
 
 {% block title %}Station{% endblock title %}
 
-{% block body %}
-<h1 style="text-align: center;">Все статьи</h1><h3 style="text-align: center;">{{ time_now|date:"d M Y"}}</h3>
+{% block content %}
+<h1 style="text-align: center;">{{ title }}</h1><h3 style="text-align: center;">{{ time_now|date:"d M Y"}}</h3>
 <p>&nbsp</p>
         <table>
             <tbody>
-                   <tr>
-                       <td style="width: 100px; text-align: center;">Id Статьи</td>
-                       <td style="width: 250px; text-align: center;">Заголовок</td>
-                       <td style="width: 250px; text-align: center;">Дата написания</td>
-                       <td style="width: 900px; text-align: center;">Текст</td>
+                   <tr>Article</td>
+                       <td style="width: 900px; text-align: center;">Id</td>
+                       <td style="width: 900px; text-align: center;">Title</td>
+                       <td style="width: 250px; text-align: center;">Text</td>
+                        <td style="width: 250px; text-align: center;">Rating</td>
+                        <td style="width: 250px; text-align: center;">Date creation</td>
                    </tr>
 
 
                     <tr>
                         <td style="text-align: center">{{ article.id}}</td>
-                        <p>____________________________________________</p>
-                        <td style="text-align: center">{{ article.name_st|change_querry}}</td>
-                        <td style="text-align: center">{{ article.data_cr_st}}</td>
-                        <td>{{ article.text_st|change_querry}}</td>
+                        <td style="text-align: center">{{ article.title }}</td>
+                        <td style="text-align: center">{{ article.text }}</td>
+                        <td style="text-align: center">{{ article.rating }}</td>
+                        <td style="text-align: center">{{ article.dateCreation }}</td>
+
                     </tr>
 
             </tbody>
         </table>
 
 
-{% endblock body %}
+{% endblock %}

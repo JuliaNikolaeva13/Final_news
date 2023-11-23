@@ -7,8 +7,8 @@ from django.views.generic import ListView, DetailView
 
 class Article(ListView):
     model = Post
-    ordering = '-data_cr_st'
-    template_name = 'main.html'
+    ordering = 'dateCreation'
+    template_name = 'flatpages/main.html'
     context_object_name = 'news'
 
     def get_context_data(self, **kwargs):
@@ -19,7 +19,7 @@ class Article(ListView):
 
 class ArticleId(DetailView):
     model = Post
-    template_name = 'news.html'
+    template_name = 'flatpages/news.html'
     context_object_name = 'article'
     pk_url_kwarg = 'id'
 
